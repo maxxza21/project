@@ -3,6 +3,7 @@ My project is Developer Anime Website <br>
 Coding Languages: HTML5, CSS, PHP, JAVASCRIPT; <br>
 Framework: Bootstrap 5; <br>
 Database: PHPMYADMIN <br>
+Main design: link [https://myanimelist.net/](https://myanimelist.net/ "https://myanimelist.net/") <br>
 list page in Website <br>
 1.Register
 ![](https://github.com/maxxza21/project/blob/main/wallpaper/register.png)
