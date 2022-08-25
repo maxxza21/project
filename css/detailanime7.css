@@ -17,7 +17,9 @@
     border: 1px solid #ECECEC;
     margin-top: -25px !important;
 }
-
+.col-3{
+    box-shadow: var(--body-color) ;
+}
 
 /* */
 /* navbar */
@@ -32,6 +34,7 @@
     --text-color: #FFF;
     --search-bar: #F2F2F2;
     --search-text: #010718;
+    --text-all: #010718;
 }
 
 body{
@@ -52,6 +55,7 @@ body.dark{
     --side-nav: #242526;
     --text-color: #ff9c00;
     --search-bar: #87e5cf;
+    --text-all: #fe0000;
 }
 
 nav{

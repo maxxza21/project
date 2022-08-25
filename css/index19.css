@@ -42,6 +42,7 @@
     --text-color: #FFF;
     --search-bar: #F2F2F2;
     --search-text: #010718;
+    --text-myanime: gray;
 }
 
 body{
@@ -62,6 +63,7 @@ body.dark{
     --side-nav: #242526;
     --text-color: #ff9c00;
     --search-bar: #87e5cf;
+    --text-myanime: red;
 }
 
 nav{
@@ -540,7 +542,7 @@ ol, ul{
    
 }
 .info{
-    color: gray;
+    color: var(--text-myanine);
     display: inline-block;
     font-family: Avenir,lucida grande,tahoma,verdana,arial,sans-serif;
     font-size: 12px;

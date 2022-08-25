@@ -23,7 +23,7 @@ if (isset($_GET['logout'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/index19.css">
+  <link rel="stylesheet" href="css/indexs.css">
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Document</title>
@@ -83,7 +83,7 @@ if (isset($_GET['logout'])) {
           <div class="widget mxj left">
             <div class="widget-header"><span style="float: right;"><a style="text-decoration: none;color:#1c439b;"
                   href="https://mxj.myanimelist.net/" style="font-weight: normal; font-size: 11px;">Visit
-                  MALxJapan</a></span>Information anime-</div>
+                  MALxJapan</a></span><span class="textheader">Information anime-<span></div>
             <div class="widget-content"><a style="text-decoration: none;"
                 href="https://mxj.myanimelist.net/anisong-survey2022/?utm_source=MAL&amp;utm_medium=top_mxj_anisong-survey2022">
                 <div class="content">
@@ -113,7 +113,7 @@ if (isset($_GET['logout'])) {
           <div class="widget mxj left">
             <div class="widget-header"><span style="float: right;"><a style="text-decoration: none; color:#1c439b;"
                   href="anime.php" style="font-weight: normal; font-size: 11px;">View
-                  more</a></span>Summer 2022 anime-</div>
+                  more</a></span><span class="textheader">Summer 2022 anime-</span></div>
             <div class="widget-content">
               <?php if (mysqli_num_rows($result) > 0) {
                 while($row=mysqli_fetch_assoc($result)) {
@@ -133,7 +133,7 @@ echo " <ul class='widget-slide js-widget-slide' >
           <div class="widget mxj left">
             <div class="widget-header"><span style="float: right;"><a style="text-decoration: none; color:#1c439b;"
                   href="videoanime.php" style="font-weight: normal; font-size: 11px;">View
-                  more</a></span>Most Popular Anime Trailers-</div>
+                  more</a></span><span class="textheader">Most Popular Anime Trailers-</span></div>
             <div class="widget-content"><a style='text-decoration: none;'
                 href='https://mxj.myanimelist.net/anisong-survey2022/?utm_source=MAL&amp;utm_medium=top_mxj_anisong-survey2022'>
                 <div class='content'>
