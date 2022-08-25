@@ -62,7 +62,7 @@ if (isset($_GET['logout'])) {
                             <ul class="nav-links">
                                 <li><a href="index.php">Home</a></li>
                                 <li><a href="anime.php">Anime</a></li>
-                                <li><a href="videoanime.php">Anime Trailers</a></li>
+                                <li><a href="videoanime.php">Trailers</a></li>
                                 <li><a href="information.php">Information</a></li>
                                 <li><a href="contact.php">Contact</a></li>
                             </ul>
