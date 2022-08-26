@@ -500,9 +500,7 @@ a{
     border-width: 0 0 1px;
     width: 100%;
 }
-.padding-pic{
-    padding-right: 5px;
-}
+
 .border-right{
     border-right: 1px solid #e5e5e5;
 }
@@ -777,6 +775,9 @@ footer{
     }
     .members{
         display: none;
+    }
+    .col-6{
+        width: 100%;
     }
     /* .fl-r{
         display: block !important;

@@ -837,6 +837,9 @@ footer{
     .videos{
         font-size: 9px;
     }
+    .d-none{
+        display: block !important;
+    }
 }
 
 @media only screen and (max-width:576px){
@@ -856,6 +859,6 @@ footer{
         margin-right: 0px;
     }
     .texthover{
-        display: block;
+        display: block !important;
     }
 }

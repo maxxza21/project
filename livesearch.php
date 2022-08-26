@@ -14,7 +14,7 @@ if(isset($_POST['input'])){
             }
     ?>
     <tr>
-        <td><a href="detailanime.php?keyword=<?php echo $id2 ?>"><img class="searchimage" src="css/<?php echo $image ?>" alt=""></a></td>
+        <td><a href="detailanime.php?keyword=<?php echo $id2 ?>"><img class="searchimage" src="wallpaper/<?php echo $image ?>" alt=""></a></td>
         <td><a href="detailanime.php?keyword=<?php echo $id2 ?>"><p style="padding-left: 5px;padding-right: 5px;"><?php echo $name2; ?></p></a></td>
     </tr>
     <?php

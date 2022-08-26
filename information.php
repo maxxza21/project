@@ -23,7 +23,7 @@ if (isset($_GET['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/informations.css">
+    <link rel="stylesheet" href="css/information.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
@@ -31,49 +31,7 @@ if (isset($_GET['logout'])) {
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <nav>
-                    <div class="nav-bar"><i class='bx bx-menu sidebarOpen'></i><span class="logo navLogo"><img
-                                src="wallpaper/AniROOM.png" alt="" style="width: 150%;"></span>
-                        <div class="menu" style="margin-top:20px;">
-                            <div class="logo-toggle"><span class="logo"><img src="wallpaper/AniROOM.png" alt=""
-                                        style="width: 200%;margin-left:95px;"></span><i
-                                    class='bx bx-x siderbarClose'></i></div>
-                            <ul class="nav-links">
-                                <li><a href="index.php">Home</a></li>
-                                <li><a href="anime.php">Anime</a></li>
-                                <li><a href="videoanime.php">Trailers</a></li>
-                                <li><a href="information.php">Information</a></li>
-                                <li><a href="contact.php">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div class="darkLight-searchBox">
-                            <div class="dark-light"><i class='bx bx-moon moon'></i><i class='bx bx-sun sun'></i></div>
-                            <form action="anime.php" method="GET">
-                                <div class="searchBox">
-                                    <div class="searchToggle"><i class='bx bx-x cancel'></i><i
-                                            class='bx bx-search search'></i></div>
-                                    <div class="search-field"><input type="text" id="image" name="keyword"
-                                            placeholder="Search..."><button style="border: none;"><i
-                                                class='bx bx-search'></i></button>
-                                        <div class="searchbar" id="searchresult"></div>
-                                        <?php include('searchdb.php') ?>
-                                    </div>
-                                </div>
-
-                            </form>
-
-                        </div>
-                        <div style="display: flex;"><?php if (isset($_SESSION['username'])) : ?><span
-                                style="font-family: anime; font-size: 16px; color: #fff; margin-right: 10px;"><?php echo $_SESSION['username'];
-                ?></span><span>
-                                <p><a href="login_success.php?logout='1'" style="color: red;">logout</a></p>
-                            </span><?php endif ?></div>
-                    </div>
-                </nav>
-            </div>
-        </div>
+    <?php include 'header.php'; ?>
         <div class="row divide">
             <div class="color-topic">
                 <h3 class="header-topic">Information ! !</h3>
@@ -104,7 +62,7 @@ if (isset($_GET['logout'])) {
 
                     <div class="carousel-item active">
                         <img src="wallpaper/anisong.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption  d-md-block">
                             <div class="box">
                                 <a
                                     href="https://mxj.myanimelist.net/anisong-survey2022/?utm_source=MAL&utm_medium=top_mxj_anisong-survey2022">
@@ -132,7 +90,7 @@ if (isset($_GET['logout'])) {
                                     echo
                     "<div class='carousel-item'>
                         <img src='wallpaper/{$row['img']}' class='d-block w-100' alt='...'>
-                        <div class='carousel-caption d-none d-md-block'>
+                        <div class='carousel-caption  d-md-block'>
                             <div class='box'>
                             <a
                                     href='{$row['link']}'>
@@ -161,32 +119,7 @@ if (isset($_GET['logout'])) {
                             <img style="width: 100%;height: auto;"src="wallpaper/mikuall5.png" alt="">
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <img src="wallpaper/aniROOM.png" alt="" style="width:10%;">
-            <p class="footer-ul">
-                <ul style="list-style: none;display: flex;">
-                    <li><a class="nav" href="index.php">Home</a></li>
-                    <li><a class="nav" href="anime.php">Anime</a></li>
-                    <li><a class="nav" href="videoanime.php">Anime Trailers</a></li>
-                    <li><a class="nav" href="information.php">information</a></li>
-                    <li><a class="nav" href="contact.php">Contact</a></li>
-                </ul>
-            </p>
-
-            <ul class="socials">
-                <li><a href="https://www.facebook.com/maxz.chatsoponpan"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="https://www.facebook.com/maxz.chatsoponpan"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="https://www.facebook.com/maxz.chatsoponpan"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="https://www.youtube.com/channel/UC6Ng-ATgob6P_EZU5RAp9Fg"><i class="fa fa-youtube"></i></a>
-                </li>
-                <li><a href="https://www.facebook.com/maxz.chatsoponpan"><i class="fa fa-linkedin-square"></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>copyright &copy;2022 designed by Maxz</p>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
     integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">

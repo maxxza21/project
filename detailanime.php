@@ -39,7 +39,7 @@ if (isset($_GET['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/detailanimes.css">
+    <link rel="stylesheet" href="css/detailanime.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
@@ -727,31 +727,7 @@ echo " <ul class='widget-slide js-widget-slide' >
         </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <img src="css/aniROOM.png" alt="" style="width:10%;">
-            <p class="footer-ul">
-                <ul style="list-style: none;display: flex;">
-                    <li><a class="nav" href="index.php">Home</a></li>
-                    <li><a class="nav" href="anime.php">Anime</a></li>
-                    <li><a class="nav" href="videoanime.php">Anime Trailers</a></li>
-                    <li><a class="nav" href="information.php">information</a></li>
-                    <li><a class="nav" href="contact.php">Contact</a></li>
-                </ul>
-            </p>
-
-            <ul class="socials">
-              <li><a href="https://www.facebook.com/maxz.chatsoponpan"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="https://www.facebook.com/maxz.chatsoponpan"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="https://www.facebook.com/maxz.chatsoponpan"><i class="fa fa-google-plus"></i></a></li>
-              <li><a href="https://www.youtube.com/channel/UC6Ng-ATgob6P_EZU5RAp9Fg"><i class="fa fa-youtube"></i></a></li>
-              <li><a href="https://www.facebook.com/maxz.chatsoponpan"><i class="fa fa-linkedin-square"></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>copyright &copy;2022 designed by Maxz</p>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
     integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous">
