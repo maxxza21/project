@@ -37,3 +37,5 @@ list page in Website <br>
 ![](https://github.com/maxxza21/project/blob/main/wallpaper/search.png)
 11. Database
 ![](https://github.com/maxxza21/project/blob/main/wallpaper/database.jpg)
+12. Information
+![](https://github.com/maxxza21/project/blob/main/wallpaper/information.png)
