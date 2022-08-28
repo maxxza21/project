@@ -23,15 +23,16 @@ if (isset($_GET['logout'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/indexs.css">
+  <link rel="stylesheet" href="css/index.css">
   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <title>Document</title>
 </head>
 
 <body>
   <div class="container">
-  <?php include 'header.php'; ?>
+    <?php include 'header.php'; ?>
     <div class="row divide">
       <div class="color-topic">
         <h3 class="header-topic">Welcome to AniRoom ! !</h3>
@@ -39,7 +40,7 @@ if (isset($_GET['logout'])) {
       <div class="col-9">
         <div class="widget-container left"><img src="wallpaper/mikuall5.png" alt=""
             style="width:100%; height: 200px;margin-top: 15px;object-fit: contain;">
-            </div>
+        </div>
         <article class="widget-container left">
           <div class="widget mxj left">
             <div class="widget-header"><span style="float: right;"><a style="text-decoration: none;color:#1c439b;"
@@ -75,19 +76,32 @@ if (isset($_GET['logout'])) {
             <div class="widget-header"><span style="float: right;"><a style="text-decoration: none; color:#1c439b;"
                   href="anime.php" style="font-weight: normal; font-size: 11px;">View
                   more</a></span><span class="textheader">Summer 2022 anime-</span></div>
-            <div class="widget-content">
+            <div class="widget-content" style="display: block;">
+              <div class="carousel" data-flickity='{ "wrapAround": true, "groupCells": true }'>
               <?php if (mysqli_num_rows($result) > 0) {
                 while($row=mysqli_fetch_assoc($result)) {
-    echo "<a style='text-decoration: none;' href='https://mxj.myanimelist.net/anisong-survey2022/?utm_source=MAL&amp;utm_medium=top_mxj_anisong-survey2022'>
-<div class='content'>";
-echo " <ul class='widget-slide js-widget-slide' >
-<li class='btn-anime'><a href='detailanime.php?keyword={$row['id']}'class='link'><h3 class='h3_character_name'><span class='title'> {$row['name']}
-    </span></h3><img class='image_anime'src='wallpaper/{$row['filename']}'></a></li></ul></div></a>";
+                  echo
+                "<div class='carousel-cell'>
+                  <img src='wallpaper/{$row['filename']}' alt='' style='width: 250px; height: 300px'>
+                  <a href='detailanime.php?keyword={$row['id']}'>
+                    <h3 class='h3_character_name'><span class='custom'> {$row['name']}
+                      </span></h3>
+                  </a></a>
+                </div>";
 
-  }
-}
+                }
+              }
+              ?>
 
-?></div>
+
+
+
+
+
+              </div>
+
+
+            </div>
           </div>
         </article>
         <article class="widget-container left">
@@ -98,12 +112,11 @@ echo " <ul class='widget-slide js-widget-slide' >
             <div class="widget-content"><a style='text-decoration: none;'
                 href='https://mxj.myanimelist.net/anisong-survey2022/?utm_source=MAL&amp;utm_medium=top_mxj_anisong-survey2022'>
                 <div class='content'>
-                  <ul class="widget-slide js-widget-slide" data-slide="3"
-                    style="display: flex;margin-left: -20px;">
+                  <ul class="widget-slide js-widget-slide" data-slide="3" style="display: flex;margin-left: -20px;">
                     <li class="btn-anime"><a data-bg="https://cdn.myanimelist.net/images/anime/10/47347.jpg"
                         class="iframe js-fancybox-video link lazyloaded picture"
-                        href="https://www.youtube.com/embed/KKzmOh4SuBc?"
-                        data-title="PV 1" data-video-id="30" data-anime-id="16498" rel="gallery"
+                        href="https://www.youtube.com/embed/KKzmOh4SuBc?" data-title="PV 1" data-video-id="30"
+                        data-anime-id="16498" rel="gallery"
                         style="background-image: url(&quot;https://cdn.myanimelist.net/images/anime/10/47347.jpg&quot;);"><span
                           class="title">PV 1</span><span class="btn-play"
                           style="background-image: url(wallpaper/play.png);">play</span></a><span class="external-link">
@@ -113,8 +126,8 @@ echo " <ul class='widget-slide js-widget-slide' >
                       </span></li>
                     <li class="btn-anime"><a data-bg="https://cdn.myanimelist.net/images/anime/9/9453.jpg"
                         class="iframe js-fancybox-video link lazyloaded picture"
-                        href="https://www.youtube.com/embed/NlJZ-YgAt-c?"
-                        data-title="PV" data-video-id="3679" data-anime-id="1535" rel="gallery"
+                        href="https://www.youtube.com/embed/NlJZ-YgAt-c?" data-title="PV" data-video-id="3679"
+                        data-anime-id="1535" rel="gallery"
                         style="background-image: url(&quot;https://cdn.myanimelist.net/images/anime/9/9453.jpg&quot;);"><span
                           class="title">PV</span><span class="btn-play"
                           style="background-image: url(wallpaper/play.png);">play</span></a><span class="external-link">
@@ -124,8 +137,8 @@ echo " <ul class='widget-slide js-widget-slide' >
                       </span></li>
                     <li class="btn-anime"><a data-bg="https://cdn.myanimelist.net/images/anime/9/9453.jpg"
                         class="iframe js-fancybox-video link lazyloaded picture"
-                        href="https://www.youtube.com/embed/--IcmZkvL0Q?"
-                        data-title="PV" data-video-id="3679" data-anime-id="1535" rel="gallery"
+                        href="https://www.youtube.com/embed/--IcmZkvL0Q?" data-title="PV" data-video-id="3679"
+                        data-anime-id="1535" rel="gallery"
                         style="background-image: url(wallpaper/fullmetal.jpg);background-position: center;"><span
                           class="title">Announcement</span><span class="btn-play"
                           style="background-image: url(wallpaper/play.png);">play</span></a><span class="external-link">
@@ -135,8 +148,8 @@ echo " <ul class='widget-slide js-widget-slide' >
                       </span></li>
                     <li class="btn-anime"><a data-bg="https://cdn.myanimelist.net/images/anime/9/9453.jpg"
                         class="iframe js-fancybox-video link lazyloaded picture"
-                        href="https://www.youtube.com/embed/6Bdb1V0Io_g?"
-                        data-title="PV" data-video-id="3679" data-anime-id="1535" rel="gallery"
+                        href="https://www.youtube.com/embed/6Bdb1V0Io_g?" data-title="PV" data-video-id="3679"
+                        data-anime-id="1535" rel="gallery"
                         style="background-image: url(wallpaper/saitama.jpg);background-position: center;"><span
                           class="title">PV1</span><span class="btn-play"
                           style="background-image: url(wallpaper/play.png);">play</span></a><span class="external-link">
@@ -155,8 +168,7 @@ echo " <ul class='widget-slide js-widget-slide' >
           <article class="widget-container right">
             <div class="widget airing_ranking right">
               <div class="ranking-digest">
-                <div class="ranking-header side_header_margin"><a class="btn-view_more"
-                    href="#"><b>More</b></a>
+                <div class="ranking-header side_header_margin"><a class="btn-view_more" href="#"><b>More</b></a>
                   <h2 class="h2_side">Top My Anime</h2>
                 </div>
                 <ul style="list-style:none;">
@@ -201,7 +213,7 @@ echo " <ul class='widget-slide js-widget-slide' >
         </div>
       </div>
     </div>
-  
+
   </div>
   <?php include 'footer.php'; ?>
 </body>
@@ -212,6 +224,7 @@ echo " <ul class='widget-slide js-widget-slide' >
   integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous">
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="js/navbar.js"></script>
 <script src="js/search.js"></script>
 

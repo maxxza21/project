@@ -437,6 +437,53 @@ body.index .widget-container{
 ol, ul{
     padding-left: 0px !important;
 }
+.carousel {
+    background: none;
+  }
+  
+  .carousel-cell {
+    height: 200px;
+    margin-right: 10px;
+    background: #8C8;
+    border-radius: 5px;
+    counter-increment: carousel-cell;
+  }
+  
+  .carousel-cell.is-selected {
+    background: #ED2;
+  }
+  
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+   
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+  }
+  .flickity-viewport{
+      height: 300px !important;
+  }
+  .flickity-page-dots{
+      display:none;
+  }
+  .custom{
+    position: absolute;
+    margin-top: -40px;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    display: inline-block;
+    font-family: Avenir,lucida grande,tahoma,verdana,arial,sans-serif;
+    font-size: 11px;
+    left: 0;
+    text-shadow: rgb(0 0 0 / 80%) 1px 1px 0;
+    width: calc(100% - 5px - 5px);
+    padding-right: 5px;
+    margin-left: 10px;
+  }
 /* */
 /* video */
 .picture{
