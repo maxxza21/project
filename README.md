@@ -20,7 +20,7 @@ list page in Website <br>
 4.footer
 ![](https://github.com/maxxza21/project/blob/main/wallpaper/footer.jpg)
 5.Index
-![](https://github.com/maxxza21/project/blob/main/wallpaper/index.png)
+![](https://github.com/maxxza21/project/blob/main/wallpaper/index.jpg)
 5.1 Can change Theme All page
 ![](https://github.com/maxxza21/project/blob/main/wallpaper/mikutheme.png)
 6 Anime
