@@ -26,7 +26,7 @@ list page in Website <br>
 6 Anime
 ![](https://github.com/maxxza21/project/blob/main/wallpaper/anime.png)
 6.1 Anime Detail : use separate by id
-![](https://github.com/maxxza21/project/blob/main/wallpaper/animedetail.png)
+![](https://github.com/maxxza21/project/blob/main/wallpaper/animedetail.jpg)
 7. Anime Trailers
 ![](https://github.com/maxxza21/project/blob/main/wallpaper/video.png)
 8. Contact
