@@ -78,15 +78,15 @@ if (isset($_GET['logout'])) {
                   more</a></span><span class="textheader">Summer 2022 anime-</span></div>
             <div class="widget-content" style="display: block;">
               <div class="carousel" data-flickity='{ "wrapAround": true, "groupCells": true }'>
-              <?php if (mysqli_num_rows($result) > 0) {
+                <?php if (mysqli_num_rows($result) > 0) {
                 while($row=mysqli_fetch_assoc($result)) {
                   echo
                 "<div class='carousel-cell'>
-                  <img src='wallpaper/{$row['filename']}' alt='' style='width: 250px; height: 300px'>
-                  <a href='detailanime.php?keyword={$row['id']}'>
+                <a href='detailanime.php?keyword={$row['id']}'> <img src='wallpaper/{$row['filename']}' alt='' style='width: 250px; height: 300px'>
+                  
                     <h3 class='h3_character_name'><span class='custom'> {$row['name']}
                       </span></h3>
-                  </a></a>
+                  </a>
                 </div>";
 
                 }
@@ -98,7 +98,7 @@ if (isset($_GET['logout'])) {
 
 
 
-              </div>
+              
 
 
             </div>
@@ -180,31 +180,29 @@ if (isset($_GET['logout'])) {
                   //         class='button_add ga-click ranking-digest fl-r addtolist'><span class='ga-click'
                   //           data-ga-click-type='list-add-button' data-ga-click-param='aid:50160'
                   //           style='line-height: unset;'>add</span></a>
-               if (mysqli_num_rows($results) > 0) {
+                  include 'myanimedb.php';
+                  $c = 1;
                 while($row=mysqli_fetch_assoc($results)) {
-                  $id2 = $row['id'];
-                  $name2 = $row['name'];
-                  $filename2 = $row['filename'];
-                  $text = $row['text'];
-                  if($id2 >= 1){
-                 echo "<li class='ranking-unit'><span class='rank'>$id2</span>
+
+                ?>
+                 <li class='ranking-unit'><span class='rank'><?php echo $c++; ?></span>
                       <p class='data-image'><a class='image'
                           href=''><img width='50' height='70'
-                            src='wallpaper/$filename2'
+                            src='wallpaper/<?php echo $row['filename']; ?>'
                             class='lazyloaded'>
                             </a>
                       </p>
                     <div class='data'>
                         <h3 class='h3_side'><a class='title'
-                            href='https://myanimelist.net/anime/50160/Kingdom_4th_Season'>$name2</a></h3>
-                        <span class='info pt8'>$text,
+                            href='#'><?php echo $row['name'] ?></a></h3>
+                        <span class='info pt8'><?php echo $row['text'] ?>,
                           scored ? </span><br><span class='members pb8'>0 members</span>
                       </div>
-                    </li>";
-               }
-              }
-              }
-                ?>
+                    </li>
+               
+             <?php 
+                }
+             ?>
 
                 </ul>
               </div>

@@ -446,21 +446,20 @@ ol, ul{
   
   .carousel-cell {
     height: 200px;
-    margin-right: 10px;
-    background: #8C8;
+    
+    background: #fff !important;
     border-radius: 5px;
     counter-increment: carousel-cell;
   }
   
   .carousel-cell.is-selected {
-    background: #ED2;
+    background: #fff !important;
   }
   
   /* cell number */
   .carousel-cell:before {
     display: block;
     text-align: center;
-   
     line-height: 200px;
     font-size: 80px;
     color: white;
@@ -473,7 +472,6 @@ ol, ul{
   }
   .custom{
     position: absolute;
-    margin-top: -40px;
     background-position: left bottom;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -486,6 +484,8 @@ ol, ul{
     width: calc(100% - 5px - 5px);
     padding-right: 5px;
     margin-left: 10px;
+    bottom: 0;
+    margin-bottom: -97px;
   }
 /* */
 /* video */

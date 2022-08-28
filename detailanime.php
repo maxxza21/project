@@ -39,9 +39,10 @@ if (isset($_GET['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/detailanime.css">
+    <link rel="stylesheet" href="css/detailanimes.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <title>Document</title>
 </head>
 
@@ -205,22 +206,24 @@ if (isset($_GET['logout'])) {
                                     style="text-decoration: none; color:#1c439b;" href="anime.php"
                                     style="font-weight: normal; font-size: 10px;">View
                                     more</a></span></h2>
-                        <div class="widget-content">
-                            <?php if (mysqli_num_rows($result) > 0) {
-                
+                                    <div class="widgetcontent" style="display: block;">
+              <div class="carousel" data-flickity='{ "wrapAround": true, "groupCells": true }'>
+                <?php if (mysqli_num_rows($result) > 0) {
                 while($row=mysqli_fetch_assoc($result)) {
-                    
-    echo "<a style='text-decoration: none;' href='https://mxj.myanimelist.net/anisong-survey2022/?utm_source=MAL&amp;utm_medium=top_mxj_anisong-survey2022'>
-<div class='content'>";
-echo " <ul class='widget-slide js-widget-slide' >
-<li class='btn-anime'><a href='detailanime.php?keyword={$row['id']}'class='link'><h3 class='h3_character_name'><span class='title'> {$row['name']}
-    </span></h3><img class='image_anime'src='wallpaper/{$row['filename']}'></a></li></ul></div></a>";
-                
-  }
-}
+                  echo
+                "<div class='carousel-cell'>
+                <a href='detailanime.php?keyword={$row['id']}'><img src='wallpaper/{$row['filename']}' alt='' style='width: 250px; height: 300px'>
+                  
+                    <h3 class='h3_character_name'><span class='custom'> {$row['name']}
+                      </span></h3>
+                  </a>
+                </div>";
 
-?>
-                        </div>
+                }
+              }
+              ?>
+            </div>
+            
                     </article>
                     <h2 class="titles" style="padding-top: 20px;">Characters & Voice Actors
                         <!--  <span style="float: right;"><a
@@ -229,6 +232,7 @@ echo " <ul class='widget-slide js-widget-slide' >
                                     more</a></span> future เพิ่ม more characters -->
                     </h2>
                     <div class="row">
+                        <!-- left --> 
                         <div class="col-6 border-right">
                             <?php
                             
@@ -292,194 +296,196 @@ echo " <ul class='widget-slide js-widget-slide' >
                                     $main9 = $row['main9'];
                                     $main10 = $row['main10'];
                                     $jp = $row['jp'];
+
+                                    echo     
+                                    
+                                    "<table class='border-space'>
+                                        <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                            <tr>
+                                                <td style='width: 11%;'>
+                                                    <div><img class='actor' src='wallpaper/charecter/$animeimage1' alt=''></div>
+                                                </td>
+                                                <td valign='top' class='borderClass'>
+                                                    <h3 class='characters_voice_actors'> $animename1 </h3>
+                                                    <div class='spaceit_pad'>
+                                                        <small> $main1 </small>
+                                                    </div>
+                                                </td>
+                                                <td align='right' valign='top' class='borderClass'>
+                                                    <table border='0' cellpadding='0' cellspacing='0'>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td valign='top' class='padding-pic'>
+                                                                    <h3 class='characters_voice_actors'> $actor1 </h3>
+                                                                    <div class='spaceit_pad_right'>
+                                                                        <small> $jp </small>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div><img class='actor' src='wallpaper/charecter/$actorimage1 '
+                                                                            alt=''></div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                     
+                                    
+                                    <table class='border-space color'>
+                                        <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                            <tr>
+                                                <td style='width: 11%;'>
+                                                    <div><img class='actor' src='wallpaper/charecter/$animeimage2 ' alt=''></div>
+                                                </td>
+                                                <td valign='top' class='borderClass'>
+                                                    <h3 class='characters_voice_actors'> $animename2 </h3>
+                                                    <div class='spaceit_pad'>
+                                                        <small> $main2 </small>
+                                                    </div>
+                                                </td>
+                                                <td align='right' valign='top' class='borderClass'>
+                                                    <table border='0' cellpadding='0' cellspacing='0'>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td valign='top' class='padding-pic'>
+                                                                    <h3 class='characters_voice_actors'> $actor2 </h3>
+                                                                    <div class='spaceit_pad_right'>
+                                                                        <small> $jp </small>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div><img class='actor' src='wallpaper/charecter/$actorimage2 '
+                                                                            alt=''></div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                            
+                                    <table class='border-space'>
+                                        <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                            <tr>
+                                                <td style='width: 11%;'>
+                                                    <div><img class='actor' src='wallpaper/charecter/$animeimage3 ' alt=''></div>
+                                                </td>
+                                                <td valign='top' class='borderClass'>
+                                                    <h3 class='characters_voice_actors'>$animename3 </h3>
+                                                    <div class='spaceit_pad'>
+                                                        <small> $main3 </small>
+                                                    </div>
+                                                </td>
+                                                <td align='right' valign='top' class='borderClass'>
+                                                    <table border='0' cellpadding='0' cellspacing='0'>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td valign='top' class='padding-pic'>
+                                                                    <h3 class='characters_voice_actors'> $actor3 </h3>
+                                                                    <div class='spaceit_pad_right'>
+                                                                        <small> $jp </small>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div><img class='actor' src='wallpaper/charecter/$actorimage3 '
+                                                                            alt=''></div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    
+                                    <table class='border-space color'>
+                                        <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                            <tr>
+                                                <td style='width: 11%;'>
+                                                    <div><img class='actor' src='wallpaper/charecter/$animeimage4 ' alt=''></div>
+                                                </td>
+                                                <td valign='top' class='borderClass'>
+                                                    <h3 class='characters_voice_actors'> $animename4 </h3>
+                                                    <div class='spaceit_pad'>
+                                                        <small> $main4 </small>
+                                                    </div>
+                                                </td>
+                                                <td align='right' valign='top' class='borderClass'>
+                                                    <table border='0' cellpadding='0' cellspacing='0'>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td valign='top' class='padding-pic'>
+                                                                    <h3 class='characters_voice_actors'> $actor4 </h3>
+                                                                    <div class='spaceit_pad_right'>
+                                                                        <small> $jp </small>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div><img class='actor' src='wallpaper/charecter/$actorimage4 '
+                                                                            alt=''></div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+        
+                                    <table class='border-space'>
+                                        <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                            <tr>
+                                                <td style='width: 11%;'>
+                                                    <div><img class='actor' src='wallpaper/charecter/$animeimage5 ' alt=''></div>
+                                                </td>
+                                                <td valign='top' class='borderClass'>
+                                                    <h3 class='characters_voice_actors'> $animename5 </h3>
+                                                    <div class='spaceit_pad'>
+                                                        <small> $main5 </small>
+                                                    </div>
+                                                </td>
+                                                <td align='right' valign='top' class='borderClass'>
+                                                    <table border='0' cellpadding='0' cellspacing='0'>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td valign='top' class='padding-pic'>
+                                                                    <h3 class='characters_voice_actors'>$actor5</h3>
+                                                                    <div class='spaceit_pad_right'>
+                                                                        <small>$jp</small>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div><img class='actor' src='wallpaper/charecter/$actorimage5'
+                                                                            alt=''></div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>";
+                                   
                                 }
                             }else{
                                 echo "Coming Soon!!";
-                                return false;
                             }
                             ?>
-                                       <!-- left --> 
-                            <table class='border-space'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage1 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename1 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main1 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor1 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage1 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                             
-                            
-                            <table class='border-space color'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage2 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename2 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main2 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor2 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage2 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                                    
-                            <table class='border-space'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage3 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename3 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main3 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor3 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage3 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                            
-                            <table class='border-space color'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage4 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename4 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main4 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor4 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage4 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                   
 
-                            <table class='border-space'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage5 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename5 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main5 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor5 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage5 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-
-
+                                   </div>
 
 
                            
                                 
                                     <!-- right -->
                          
-                        </div>
+                        
                         <div class="col-6">
                         <?php
                             
@@ -543,183 +549,187 @@ echo " <ul class='widget-slide js-widget-slide' >
                                     $main9 = $row['main9'];
                                     $main10 = $row['main10'];
                                     $jp = $row['jp'];
+
+                                    echo
+                                    "<table class='border-space'>
+                                    <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                        <tr>
+                                            <td style='width: 11%;'>
+                                                <div><img class='actor' src='wallpaper/charecter/$animeimage6 ' alt=''></div>
+                                            </td>
+                                            <td valign='top' class='borderClass'>
+                                                <h3 class='characters_voice_actors'> $animename6 </h3>
+                                                <div class='spaceit_pad'>
+                                                    <small> $main6 </small>
+                                                </div>
+                                            </td>
+                                            <td align='right' valign='top' class='borderClass'>
+                                                <table border='0' cellpadding='0' cellspacing='0'>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign='top' class='padding-pic'>
+                                                                <h3 class='characters_voice_actors'> $actor6 </h3>
+                                                                <div class='spaceit_pad_right'>
+                                                                    <small> $jp </small>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div><img class='actor' src='wallpaper/charecter/$actorimage6 '
+                                                                        alt=''></div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                 
+                                
+                                <table class='border-space color'>
+                                    <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                        <tr>
+                                            <td style='width: 11%;'>
+                                                <div><img class='actor' src='wallpaper/charecter/$animeimage7 ' alt=''></div>
+                                            </td>
+                                            <td valign='top' class='borderClass'>
+                                                <h3 class='characters_voice_actors'> $animename7 </h3>
+                                                <div class='spaceit_pad'>
+                                                    <small> $main7 </small>
+                                                </div>
+                                            </td>
+                                            <td align='right' valign='top' class='borderClass'>
+                                                <table border='0' cellpadding='0' cellspacing='0'>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign='top' class='padding-pic'>
+                                                                <h3 class='characters_voice_actors'> $actor7 </h3>
+                                                                <div class='spaceit_pad_right'>
+                                                                    <small> $jp </small>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div><img class='actor' src='wallpaper/charecter/$actorimage7 '
+                                                                        alt=''></div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                        
+                                <table class='border-space'>
+                                    <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                        <tr>
+                                            <td style='width: 11%;'>
+                                                <div><img class='actor' src='wallpaper/charecter/$animeimage8 ' alt=''></div>
+                                            </td>
+                                            <td valign='top' class='borderClass'>
+                                                <h3 class='characters_voice_actors'> $animename8 </h3>
+                                                <div class='spaceit_pad'>
+                                                    <small> $main8 </small>
+                                                </div>
+                                            </td>
+                                            <td align='right' valign='top' class='borderClass'>
+                                                <table border='0' cellpadding='0' cellspacing='0'>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign='top' class='padding-pic'>
+                                                                <h3 class='characters_voice_actors'> $actor8 </h3>
+                                                                <div class='spaceit_pad_right'>
+                                                                    <small> $jp </small>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div><img class='actor' src='wallpaper/charecter/$actorimage8 '
+                                                                        alt=''></div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                
+                                <table class='border-space color'>
+                                    <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                        <tr>
+                                            <td style='width: 11%;'>
+                                                <div><img class='actor' src='wallpaper/charecter/$animeimage9 ' alt=''></div>
+                                            </td>
+                                            <td valign='top' class='borderClass'>
+                                                <h3 class='characters_voice_actors'> $animename4 </h3>
+                                                <div class='spaceit_pad'>
+                                                    <small> $main9 </small>
+                                                </div>
+                                            </td>
+                                            <td align='right' valign='top' class='borderClass'>
+                                                <table border='0' cellpadding='0' cellspacing='0'>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign='top' class='padding-pic'>
+                                                                <h3 class='characters_voice_actors'> $actor9 </h3>
+                                                                <div class='spaceit_pad_right'>
+                                                                    <small> $jp </small>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div><img class='actor' src='wallpaper/charecter/$actorimage9 '
+                                                                        alt=''></div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+    
+                                <table class='border-space'>
+                                    <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
+                                        <tr>
+                                            <td style='width: 11%;'>
+                                                <div><img class='actor' src='wallpaper/charecter/$animeimage10 ' alt=''></div>
+                                            </td>
+                                            <td valign='top' class='borderClass'>
+                                                <h3 class='characters_voice_actors'> $animename10 </h3>
+                                                <div class='spaceit_pad'>
+                                                    <small> $main10 </small>
+                                                </div>
+                                            </td>
+                                            <td align='right' valign='top' class='borderClass'>
+                                                <table border='0' cellpadding='0' cellspacing='0'>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign='top' class='padding-pic'>
+                                                                <h3 class='characters_voice_actors'> $actor10 </h3>
+                                                                <div class='spaceit_pad_right'>
+                                                                    <small> $jp </small>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div><img class='actor' src='wallpaper/charecter/$actorimage10 '
+                                                                        alt=''></div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>";
                                 }
                             }else{
-                                return false;
+                                echo "Coming Soon!!";
+                               
                             }
                             ?>
-                                       <!-- left --> 
-                            <table class='border-space'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage6 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename6 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main6 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor6 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage6 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                             
-                            
-                            <table class='border-space color'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage7 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename7 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main7 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor7 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage7 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                                    
-                            <table class='border-space'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage8 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename8 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main8 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor8 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage8 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                            
-                            <table class='border-space color'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage9 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename4 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main9 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor9 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage9 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <table class='border-space'>
-                                <tbody border='0' cellpadding='0' cellspacing='0' width='100%'>
-                                    <tr>
-                                        <td style='width: 11%;'>
-                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $animeimage10 ?>' alt=''></div>
-                                        </td>
-                                        <td valign='top' class='borderClass'>
-                                            <h3 class='characters_voice_actors'><?php echo $animename10 ?></h3>
-                                            <div class='spaceit_pad'>
-                                                <small><?php echo $main10 ?></small>
-                                            </div>
-                                        </td>
-                                        <td align='right' valign='top' class='borderClass'>
-                                            <table border='0' cellpadding='0' cellspacing='0'>
-                                                <tbody>
-                                                    <tr>
-                                                        <td valign='top' class='padding-pic'>
-                                                            <h3 class='characters_voice_actors'><?php echo $actor10 ?></h3>
-                                                            <div class='spaceit_pad_right'>
-                                                                <small><?php echo $jp ?></small>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div><img class='actor' src='wallpaper/charecter/<?php echo $actorimage10 ?>'
-                                                                    alt=''></div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                      
+                           
                         </div>
                     </div>
                 </div>
@@ -738,6 +748,7 @@ echo " <ul class='widget-slide js-widget-slide' >
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/7add581fca.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="js/navbar.js"></script>
 <script src="js/scroll2.js"></script>
 <script src="js/search.js"></script>
